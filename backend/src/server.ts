@@ -1,9 +1,10 @@
 import express from 'express';
+//import bodyParser from 'body-parser';
 import cors from 'cors';
 import productRoutes from './routes/productRoutes';
 import userRoutes from './routes/userRoutes';
-import sequelize from './config/config';
-
+import sequelize from './config/config'
+//import User from './models/User';
 const app = express();
 const PORT = process.env.PORT || 8000;
 
@@ -16,7 +17,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use('/product', productRoutes);
-app.use('/users', userRoutes);
+//app.use('/users', userRoutes);
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
