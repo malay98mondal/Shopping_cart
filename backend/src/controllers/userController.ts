@@ -7,9 +7,12 @@ export const createUser = async (req: Request, res: Response) => {
       res.status(201).json(user);
       console.log(user);
       
+      
     } catch (err) {
       res.status(500).json(err);
     }
+    
   
-    console.log("user created");
+    console.log("user created!");
+    
   };
