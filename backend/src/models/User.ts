@@ -7,46 +7,40 @@ class User extends Model {
   public email!: string;
   public password!: string;
   public status!: string;
+  public phonenumber!: string; // Ensure this column is added
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-User.init(
-  {
-    id: {
-      type: DataTypes.INET,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-    name: {
-      type: new DataTypes.STRING(128),
-      allowNull: false,
-    },
-    email: {
-      type: new DataTypes.STRING(128),
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
-    password: {
-      type: new DataTypes.STRING(128),
-      allowNull: false,
-    },
-    status: {
-      type: new DataTypes.STRING(128),
-      allowNull: false,
-    },
+User.init({
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
   },
-  {
-    sequelize,
-    tableName: 'users',
-    timestamps: true,
-    
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  status: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  phonenumber: {
+    type: DataTypes.STRING,
+    allowNull: false
   }
-  
-);
-
+}, {
+  sequelize,
+  tableName: 'users'
+});
 
 export default User;

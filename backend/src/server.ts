@@ -7,7 +7,7 @@ import userRoutes from './routes/userRoutes'; // Ensure this is correctly import
 import sequelize from './config/config'; // Ensure the correct path
 //import LoginHistory from './models/loginHistory';
 import LoginHistoryRoutes from './routes/loginHistoryRoutes';
-import User from './models/User';
+//import User from './models/User';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
